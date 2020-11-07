@@ -10,6 +10,7 @@
     En sistemas linux o usando GIT Bash, Utiliza el siguiente comando:
         `git clone https://github.com/MichaelAuditore/JuliusApi.git`
 
+
     Nota: si no tienes ninguno de los anteriores accede a la url y descargalo como archivo ZIP y descomprime
 
 ### 2. Recursos creados para la aplicación
@@ -76,6 +77,12 @@
 
 Nota: para ejecutar el comando dev, es necesario acceder al archivo
 [index.js](src/config/index.js) y cambiar la variable env a **"development"**
+
+### 3. Ejecutar la aplicación
+
+Es obligatorio tener instalado **npm** o **yarn**:
+    1. ejecutar **npm install** o **yarn install**
+    2. ejecutar **npm run start**
 
 # Autor
 
