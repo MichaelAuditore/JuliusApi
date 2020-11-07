@@ -53,14 +53,23 @@
 # Comandos Validos usando NPM para ejecutar la aplicación
 
 "build" - genera la carpeta que convierte typescript en JS usando babel
+
 "test" - genera un entorno de testeo para la aplicación
+
 "test-routes" - ejecuta el entorno de testeo de los endpoints creados para la aplicación
-"test-models" - ejecuta el entorno de testeo para los modelos creados y relaciones a la DB,
-"test-controllers" - ejecuta el entorno de testeo para las funciones de CRUD de la app en DB,
+
+"test-models" - ejecuta el entorno de testeo para los modelos creados y relaciones a la DB
+
+"test-controllers" - ejecuta el entorno de testeo para las funciones de CRUD de la app en DB
+
 "test-auth" - ejecuta el entorno de testeo para las funciones de registro, ingreso y autenticación
+
 "dev" - ejecuta un entorno local para correr la aplicación
-"prod": ejecuta un entorno de produccion para correr la aplicación,
+
+"prod": ejecuta un entorno de produccion para correr la aplicación
+
 "restart" - crea el directorio y ejecuta el comando **build** y **start**
+
 "start": "node dist/index.js"
 
 Nota: para ejecutar el comando dev, es necesario acceder al archivo
