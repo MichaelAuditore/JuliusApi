@@ -86,7 +86,7 @@ Es obligatorio tener instalado **npm** o **yarn**:
 
 # Autor
 
-[michaelAuditore](michael_v613@hotmail.com)
+[MichaelAuditore](https://github.com/MichaelAuditore/)
 
 ## MongoDB Database
 
