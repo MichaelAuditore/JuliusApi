@@ -23,10 +23,12 @@
     [X] GET /api/post - este metodo con su respectivo verbo nos sirve para obtener todos los posts
     [X] POST /api/post - este metodo con su respectivo verbo nos sirve para crear un post en la base de datos
     [X] GET /api/post/:id - este metodo con su respectivo verbo nos sirve para obtener un post en especifico
-    [X] GET /api/post/:match - este metodo con su respectivo verbo nos sirve para encontrar coincidencias de un post
-                                por titulo o por contenido.
-    [X] PUT /api/post/:id - este metodo con su respectivo verbo nos sirve para actualizar un post en la base de datos
-    [X] DELETE /api/post/:id - este metodo con su respectivo verbo nos sirve para eliminar un post en la base de datos
+    [X] GET /api/post/:match - este metodo con su respectivo verbo nos sirve para encontrar coincidencias de
+                                un post por titulo o por contenido.
+    [X] PUT /api/post/:id - este metodo con su respectivo verbo nos sirve para actualizar
+                                un post en la base de datos
+    [X] DELETE /api/post/:id - este metodo con su respectivo verbo nos sirve para eliminar 
+                                un post en la base de datos
 
 ## Modelos
 
@@ -77,7 +79,7 @@ Nota: para ejecutar el comando dev, es necesario acceder al archivo
 
 # Autor
 
-<michael_v613@hotmail.com>[michaelAuditore]
+[michaelAuditore](michael_v613@hotmail.com)
 
 ## MongoDB Database
 
