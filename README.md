@@ -28,7 +28,7 @@
                                 un post por titulo o por contenido.
     [X] PUT /api/post/:id - este metodo con su respectivo verbo nos sirve para actualizar
                                 un post en la base de datos
-    [X] DELETE /api/post/:id - este metodo con su respectivo verbo nos sirve para eliminar 
+    [X] DELETE /api/post/:id - este metodo con su respectivo verbo nos sirve para eliminar
                                 un post en la base de datos
 
 ## Modelos
@@ -80,9 +80,7 @@ Nota: para ejecutar el comando dev, es necesario acceder al archivo
 
 ### 3. Ejecutar la aplicación
 
-Es obligatorio tener instalado **npm** o **yarn**:
-    1. ejecutar **npm install** o **yarn install**
-    2. ejecutar **npm run start**
+Es obligatorio tener instalado **npm** o **yarn**: 1. ejecutar **npm install** o **yarn install** 2. ejecutar **npm run start**
 
 # Autor
 
@@ -91,3 +89,5 @@ Es obligatorio tener instalado **npm** o **yarn**:
 ## MongoDB Database
 
     Esta aplicación esta sujeta a una base de datos actualmente corriendo en MongoDB Atlas.
+
+![DB Mongo Atlas Cluster Image](https://imgur.com/a/rftmOI3)
