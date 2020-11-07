@@ -90,4 +90,4 @@ Es obligatorio tener instalado **npm** o **yarn**: 1. ejecutar **npm install** o
 
     Esta aplicación esta sujeta a una base de datos actualmente corriendo en MongoDB Atlas.
 
-![DB Mongo Atlas Cluster Image](https://imgur.com/a/rftmOI3)
+![DB Mongo Atlas Cluster Image](https://i.imgur.com/EBJLW8A.png)
