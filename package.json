@@ -20,14 +20,14 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "test": "cross-env NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
-    "test-routes": "npm test -t router",
-    "test-models": "npm test -t model",
-    "test-controllers": "npm test -t controllers",
-    "test-auth": "npm test -t Authentication:",
-    "dev": "nodemon --exec npm restart",
-    "prod": "cross-env NODE_ENV=prod && nodemon --exec npm restart",
-    "restart": "rimraf dist && npm build",
-    "start": "npm restart && cd dist/ && node index.js"
+    "test-routes": "npm run test -t router",
+    "test-models": "npm run test -t model",
+    "test-controllers": "npm run test -t controllers",
+    "test-auth": "npm run test -t Authentication:",
+    "dev": "nodemon --exec npm run restart",
+    "prod": "cross-env NODE_ENV=prod && nodemon --exec npm run restart",
+    "restart": "rimraf dist && npm run build",
+    "start": "npm run restart && node dist/index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
