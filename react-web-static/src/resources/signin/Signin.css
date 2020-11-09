@@ -16,7 +16,8 @@ button.btn-primary {
 }
 
 .logo {
-  background: url("./julius-2.svg") no-repeat center;
+  background: url('https://www.julius2grow.com/wp-content/uploads/2019/08/julius-2.svg')
+    no-repeat center;
   background-size: auto;
   background-size: 200px;
   height: 150px;
@@ -44,4 +45,3 @@ button.btn-primary {
 button {
   text-align: center;
 }
-

@@ -1,126 +1,124 @@
-import Button from "react-bootstrap/Button";
-import { checkSession, closeSession, saveImage } from "../../utils/utils";
-import close from "./close.png";
-import Container from "react-bootstrap/Container";
-import { createOne } from "../../utils/crud";
-import FormControl from "react-bootstrap/FormControl";
-import FormFile from "react-bootstrap/FormFile";
-import { getMany, getByMatch } from "../../utils/crud";
-import InputGroup from "react-bootstrap/InputGroup";
-import Jumbotron from "react-bootstrap/Jumbotron";
-import logo from "./julius-2.svg";
-import { Link } from "react-router-dom";
-import Modal from "react-bootstrap/Modal";
-import Navbar from "react-bootstrap/Navbar";
-import Pagination from "react-bootstrap/Pagination";
-import Paginator from "../paginator/Paginator";
-import Post from "../post/Post";
-import React from "react";
-import $ from "jquery";
-import "./Home.css";
+import Button from 'react-bootstrap/Button'
+import { checkSession, closeSession, saveImage } from '../../utils/utils'
+import Container from 'react-bootstrap/Container'
+import { createOne } from '../../utils/crud'
+import FormControl from 'react-bootstrap/FormControl'
+import FormFile from 'react-bootstrap/FormFile'
+import { getMany, getByMatch } from '../../utils/crud'
+import InputGroup from 'react-bootstrap/InputGroup'
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import { Link } from 'react-router-dom'
+import Modal from 'react-bootstrap/Modal'
+import Navbar from 'react-bootstrap/Navbar'
+import Pagination from 'react-bootstrap/Pagination'
+import Paginator from '../paginator/Paginator'
+import Post from '../post/Post'
+import React from 'react'
+import $ from 'jquery'
+import './Home.css'
 
 class Home extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       posts: [],
-      title: "",
-      content: "",
-      url: "",
-      message: "",
-      bar: "",
+      title: '',
+      content: '',
+      url: '',
+      message: '',
+      bar: '',
       show: false,
       render: false,
       paginator: 0,
-    };
+    }
 
-    this.filterPosts = this.filterPosts.bind(this);
-    this.handleShow = this.handleShow.bind(this);
-    this.handleClose = this.handleClose.bind(this);
-    this.publishEvent = this.publishEvent.bind(this);
-    this.ImageEvent = this.ImageEvent.bind(this);
-    this.getURL = this.getURL.bind(this);
+    this.filterPosts = this.filterPosts.bind(this)
+    this.handleShow = this.handleShow.bind(this)
+    this.handleClose = this.handleClose.bind(this)
+    this.publishEvent = this.publishEvent.bind(this)
+    this.ImageEvent = this.ImageEvent.bind(this)
+    this.getURL = this.getURL.bind(this)
   }
 
   getURL = (e) => {
-    e.preventDefault();
-    this.setState({ url: e.target.files[0] });
-    $(".custom-file-label").html(e.target.files[0].name);
-  };
+    e.preventDefault()
+    this.setState({ url: e.target.files[0] })
+    $('.custom-file-label').html(e.target.files[0].name)
+  }
 
   filterPosts = async (e) => {
-    e.preventDefault();
-    const match = this.state.bar;
-    if (match === "") {
-      this.getPosts();
+    e.preventDefault()
+    const match = this.state.bar
+    if (match === '') {
+      this.getPosts()
     } else {
       await getByMatch(match).then((data) => {
-        this.setState({ posts: data.data });
-        this.setState({ render: true });
-      });
+        this.setState({ posts: data.data })
+        this.setState({ render: true })
+      })
     }
-  };
+  }
 
   ImageEvent = async () => {
-    if (this.state.url === "") {
-      this.handleShow();
+    if (this.state.url === '') {
+      this.handleShow()
       this.setState({
         message:
-          "No puede subir un Objeto vacio, por favor seleccione una imagen",
-      });
+          'No puede subir un Objeto vacio, por favor seleccione una imagen',
+      })
     } else {
-      const url = await saveImage(this.state.url);
+      const url = await saveImage(this.state.url)
 
-      this.setState({ url: url.Location });
+      this.setState({ url: url.Location })
     }
-  };
+  }
 
   handleShow = () => {
-    this.setState({ show: true });
-  };
+    this.setState({ show: true })
+  }
 
   handleClose() {
-    this.setState({ show: false });
+    this.setState({ show: false })
   }
 
   getPosts = () => {
     getMany().then((data) => {
-      if (data.message) closeSession();
+      if (data.message) closeSession()
       this.setState({
         posts: data.data,
-      });
-      this.setState({ render: true });
-    });
-  };
+      })
+      this.setState({ render: true })
+    })
+  }
 
   async publishEvent() {
-    if (this.state.title === "") {
-      this.handleShow();
-      this.setState({ message: "El titulo es requerido" });
-    } else if (this.state.content === "") {
-      this.handleShow();
-      this.setState({ message: "El contenido es requerido" });
+    if (this.state.title === '') {
+      this.handleShow()
+      this.setState({ message: 'El titulo es requerido' })
+    } else if (this.state.content === '') {
+      this.handleShow()
+      this.setState({ message: 'El contenido es requerido' })
     } else {
       const body = {
         title: this.state.title,
         content: this.state.content,
-      };
-
-      if (this.state.url !== "") {
-        body.url = this.state.url;
       }
-      await createOne(body);
-      this.getPosts();
+
+      if (this.state.url !== '') {
+        body.url = this.state.url
+      }
+      await createOne(body)
+      this.getPosts()
     }
   }
 
   componentDidMount() {
     if (checkSession()) {
-      this.getPosts();
+      this.getPosts()
     } else {
-      window.location.href = "/";
+      this.props.history.push('/')
     }
-    $(`.${this.state.paginator}`).show();
+    $(`.${this.state.paginator}`).show()
   }
 
   render() {
@@ -129,7 +127,7 @@ class Home extends React.Component {
         <Navbar bg="dark" variant="primary">
           <Navbar.Brand href="#">
             <img
-              src={logo}
+              src="https://www.julius2grow.com/wp-content/uploads/2019/08/julius-2.svg"
               width="60"
               height="60"
               className="d-inline-block align-top"
@@ -149,12 +147,17 @@ class Home extends React.Component {
 
           <Navbar.Collapse className="justify-content-end">
             <Navbar.Text>
-              Signed in as:{" "}
-              <a href="#login">{sessionStorage.getItem("email")}</a>
+              Signed in as:{' '}
+              <a href="#login">{sessionStorage.getItem('email')}</a>
             </Navbar.Text>
             <Link to="/">
               <span onClick={closeSession}>
-                <img src={close} width="40" height="40" alt="closeSession" />
+                <img
+                  src="https://miguelpbucket.s3.us-east-2.amazonaws.com/images/close.png"
+                  width="40"
+                  height="40"
+                  alt="closeSession"
+                />
               </span>
             </Link>
           </Navbar.Collapse>
@@ -230,8 +233,8 @@ class Home extends React.Component {
           </Modal.Footer>
         </Modal>
       </Container>
-    );
+    )
   }
 }
 
-export default Home;
+export default Home
