@@ -36,7 +36,8 @@
     "lodash": "^4.17.11",
     "mongoose": "^5.3.13",
     "morgan": "^1.9.1",
-    "validator": "^10.9.0"
+    "validator": "^10.9.0",
+    "rimraf": "^2.6.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
@@ -63,7 +64,6 @@
     "mock-req-res": "^1.0.2",
     "nodemon": "^2.0.4",
     "prettier": "^1.15.2",
-    "rimraf": "^2.6.2",
     "supertest": "^3.3.0"
   },
   "jest": {
