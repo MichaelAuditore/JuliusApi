@@ -86,6 +86,18 @@ Es obligatorio tener instalado **npm** o **yarn**: 1. ejecutar **npm install** o
 
 [MichaelAuditore](https://github.com/MichaelAuditore/)
 
+## API URL
+
+Localmente puedes acceder usando esta url `http://localhost:3100/api/`
+
+[Heroku API URL](https://m-julius-api.herokuapp.com/api/post)
+
+## Client-Side
+
+Localmente puedes acceder usando esta url `http://localhost:3000/`
+
+[AWS Url](http://juliusfront.s3-website.us-east-2.amazonaws.com/#/)
+
 ## MongoDB Database
 
     Esta aplicación esta sujeta a una base de datos actualmente corriendo en MongoDB Atlas.
