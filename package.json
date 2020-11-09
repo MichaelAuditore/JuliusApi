@@ -15,7 +15,7 @@
   "homepage": "https://github.com/MichaelAuditore/JuliusApi#readme",
   "scripts": {
     "clean": "rm -rf dist && mkdir dist",
-    "build-babel": "babel -d src --out-dir dist",
+    "build-babel": "babel -d ./dist ./src -s",
     "build": "npm run clean && npm run build-babel",
     "start": "npm run build && node ./dist/index.js",
     "test": "cross-env NODE_ENV=testing jest --watch --detectOpenHandles  --silent=false",
