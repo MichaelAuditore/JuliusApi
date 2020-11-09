@@ -23,7 +23,7 @@
     "test-auth": "npm test -t Authentication:",
     "dev": "nodemon --exec npm restart",
     "prod": "cross-env NODE_ENV=prod && nodemon --exec npm restart",
-    "restart": "rimraf dist && npm build && npm start",
+    "restart": "rimraf dist && npm build",
     "start": "npm restart && node dist/index.js"
   },
   "dependencies": {
