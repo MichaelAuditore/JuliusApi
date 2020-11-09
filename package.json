@@ -13,10 +13,6 @@
     "url": "https://github.com/MichaelAuditore/JuliusApi/issues"
   },
   "homepage": "https://github.com/MichaelAuditore/JuliusApi#readme",
-  "engines": {
-    "node": "10",
-    "npm": "6"
-  },
   "scripts": {
     "build": "babel src --out-dir dist",
     "test": "cross-env NODE_ENV=testing jest --watch --detectOpenHandles  --silent=false",
