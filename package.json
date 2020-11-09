@@ -24,7 +24,7 @@
     "prod": "cross-env NODE_ENV=prod && nodemon --exec yarn restart",
     "restart": "rimraf dist && yarn build && yarn start",
     "heroku-prebuild": "",
-    "heroku-postbuild": "babel-node dist/node.js",
+    "heroku-postbuild": "yarn restart",
     "start": "node dist/index.js"
   },
   "engines": {
