@@ -2,7 +2,7 @@
   "name": "juliusapi",
   "version": "1.0.0",
   "description": "API to create posts using an authenticated user existing in DB",
-  "main": "dist/index.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MichaelAuditore/JuliusApi.git"
@@ -30,7 +30,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "cuid": "^2.1.4",
-    "dotenv": "^6.1.0",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",

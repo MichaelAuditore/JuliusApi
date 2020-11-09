@@ -6,7 +6,7 @@ const baseConfig = {
   isDev: env === 'development',
   isProd: env === 'prod',
   isTest: env === 'testing',
-  port: 3000,
+  port: 3100,
   secrets: {
     jwt: process.env.JWT_SECRET,
     jwtExp: '1h'

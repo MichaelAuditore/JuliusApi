@@ -30,16 +30,20 @@ export const getMatch = model => async (req, res) => {
       .find({
         $or: [
           {
-            title: { $regex: req.params.postMatch, $options: 'i' }
+            title: { $regex: '.*' + req.params.postMatch + '.*' }
           },
           {
-            content: { $regex: req.params.postMatch, $options: 'i' }
+            content: { $regex: '.*' + req.params.postMatch + '.*' }
           }
-        ],
-        createdBy: req.user._id
+        ]
       })
       .lean()
       .exec()
+
+    if (!docs) {
+      res.status(400).end()
+    }
+
     res.status(200).json({ data: docs })
   } catch (e) {
     console.error(e)
@@ -115,10 +119,12 @@ export const updateOne = model => async (req, res) => {
  */
 export const removeOne = model => async (req, res) => {
   try {
-    const removed = await model.findOneAndRemove({
-      createdBy: req.user._id,
-      _id: req.params.id
-    })
+    const removed = await model
+      .findOneAndRemove({
+        createdBy: req.user._id,
+        _id: req.params.id
+      })
+      .exec()
 
     if (!removed) {
       return res.status(400).end()

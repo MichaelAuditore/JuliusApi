@@ -10,11 +10,11 @@ router
   .get(controllers.getMany)
 
 // api/posts/:postMatch
-router.route('/:postMatch').get(controllers.getMatch)
+router.route('/match/:postMatch').get(controllers.getMatch)
 
 // api/posts/:postId
 router
-  .route('/:postId')
+  .route('/:id')
   .get(controllers.getOne)
   .put(controllers.updateOne)
   .delete(controllers.removeOne)

@@ -17,18 +17,24 @@ export const verifyToken = token =>
   })
 
 export const signup = async (req, res) => {
-  if (!req.body.email || !req.body.password) {
-    return res.status(400).send({ message: 'Email and Password are Required' })
+  if (!req.body.username || !req.body.email || !req.body.password) {
+    return res
+      .status(400)
+      .send({ message: 'Username, Email and Password are Required' })
+  }
+  const user = await User.findOne({ email: req.body.email }).exec()
+  if (user) {
+    return res
+      .status(401)
+      .send({ message: 'User with that email already exists' })
   }
   try {
     const user = await User.create(req.body)
     const token = newToken(user)
-    return res.status(201).send({
+    return res.status(201).json({
       tokenId: token,
-      user: {
-        email: user.email,
-        userId: user._id
-      }
+      email: user.email,
+      userId: user._id
     })
   } catch (e) {
     console.error(e)
@@ -37,10 +43,8 @@ export const signup = async (req, res) => {
 }
 
 export const signin = async (req, res) => {
-  if (!req.body.username || !req.body.email || !req.body.password) {
-    return res
-      .status(400)
-      .send({ message: 'Username, Email and Password are Required' })
+  if (!req.body.email || !req.body.password) {
+    return res.status(400).send({ message: 'Email and Password are Required' })
   }
 
   const user = await User.findOne({ email: req.body.email }).exec()
@@ -53,12 +57,10 @@ export const signin = async (req, res) => {
       return res.status(401).send({ message: "Password doesn't matches" })
     }
     const token = newToken(user)
-    return res.status(201).send({
+    return res.status(201).json({
       tokenId: token,
-      user: {
-        email: user.email,
-        userId: user._id
-      }
+      email: user.email,
+      userId: user._id
     })
   } catch (e) {
     console.error(e)
@@ -84,6 +86,13 @@ export const protect = async (req, res, next) => {
     next()
   } catch (e) {
     console.error(e)
+    if (e.name === 'TokenExpiredError') {
+      return res.status(403).send({
+        status: 403,
+        success: false,
+        message: 'Token Expired'
+      })
+    }
     return res.status(401).end()
   }
 }
