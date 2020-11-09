@@ -1,0 +1,47 @@
+.login {
+  text-align: center;
+  margin: 50px auto;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #e7e7e7;
+  border-radius: 10px;
+  padding: 50px 50px;
+  background-color: #0a447f;
+  box-shadow: 5px 5px 5px #eee;
+  color: white;
+}
+
+button.btn-primary {
+  width: 102.983px;
+}
+
+.logo {
+  background: url("./julius-2.svg") no-repeat center;
+  background-size: auto;
+  background-size: 200px;
+  height: 150px;
+  margin-bottom: 10%;
+}
+
+.display-flex {
+  display: flex;
+}
+
+.custom {
+  background-color: #f08e22 !important;
+  border-color: #f08e22 !important;
+}
+
+.registerButton {
+  padding-right: 5%;
+}
+
+.custom:hover {
+  background-color: #ca7316 !important;
+  border-color: #ca7316 !important;
+}
+
+button {
+  text-align: center;
+}
+

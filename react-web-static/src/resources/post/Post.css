@@ -1,0 +1,13 @@
+.published input,
+.published textarea {
+  background-color: white !important;
+}
+
+.saving,
+.canceling {
+  display: none;
+}
+
+.postsPublished .j0 {
+  display: block!important;
+}

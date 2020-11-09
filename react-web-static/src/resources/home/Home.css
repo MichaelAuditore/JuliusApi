@@ -1,0 +1,25 @@
+.jumbotron {
+  background-color: #fff;
+  border: solid 1px #dee2e6;
+}
+
+.image-upload {
+  background-image: url("https://static.thenounproject.com/png/625182-200.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+}
+
+.navbar {
+  height: 55px;
+}
+
+.postsPublished .jumbotron {
+  display: none;
+}
+
+.navbar-text {
+  color: white;
+}
