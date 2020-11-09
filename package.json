@@ -27,7 +27,7 @@
     "dev": "nodemon --exec npm restart",
     "prod": "cross-env NODE_ENV=prod && nodemon --exec npm restart",
     "restart": "rimraf dist && npm build",
-    "start": "npm restart && node index.js"
+    "start": "npm restart && cd dist/ && node index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
