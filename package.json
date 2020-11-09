@@ -25,7 +25,7 @@
     "restart": "rimraf dist && yarn build && yarn start",
     "heroku-prebuild": "",
     "heroku-postbuild": "yarn restart",
-    "start": "node dist/index.js"
+    "start": "yarn restart && node dist/index.js"
   },
   "engines": {
     "node": "10.22.0",
