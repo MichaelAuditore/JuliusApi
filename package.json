@@ -16,16 +16,14 @@
   "scripts": {
     "build": "babel src --out-dir dist",
     "test": "cross-env NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
-    "test-routes": "yarn test -t router",
-    "test-models": "yarn test -t model",
-    "test-controllers": "yarn test -t controllers",
-    "test-auth": "yarn test -t Authentication:",
-    "dev": "nodemon --exec yarn restart",
-    "prod": "cross-env NODE_ENV=prod && nodemon --exec yarn restart",
-    "restart": "rimraf dist && yarn build && yarn start",
-    "heroku-prebuild": "",
-    "heroku-postbuild": "yarn restart",
-    "start": "yarn restart && node dist/index.js"
+    "test-routes": "npm test -t router",
+    "test-models": "npm test -t model",
+    "test-controllers": "npm test -t controllers",
+    "test-auth": "npm test -t Authentication:",
+    "dev": "nodemon --exec npm restart",
+    "prod": "cross-env NODE_ENV=prod && nodemon --exec npm restart",
+    "restart": "rimraf dist && npm build && npm start",
+    "start": "npm restart && node dist/index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
