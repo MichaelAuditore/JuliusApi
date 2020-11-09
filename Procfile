@@ -1,1 +1,1 @@
-web: NODE_ENV=production npm run heroku
+web: NODE_ENV=production npm start

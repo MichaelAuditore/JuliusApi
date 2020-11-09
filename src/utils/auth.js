@@ -31,7 +31,7 @@ export const signup = async (req, res) => {
   try {
     const user = await User.create(req.body)
     const token = newToken(user)
-    return res.status(201).json({
+    return res.status(201).send({
       tokenId: token,
       email: user.email,
       userId: user._id
@@ -57,7 +57,7 @@ export const signin = async (req, res) => {
       return res.status(401).send({ message: "Password doesn't matches" })
     }
     const token = newToken(user)
-    return res.status(201).json({
+    return res.status(201).send({
       tokenId: token,
       email: user.email,
       userId: user._id

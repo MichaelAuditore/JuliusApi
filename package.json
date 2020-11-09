@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "babel src --out-dir dist",
-    "test": "cross-env NODE_ENV=testing jest --forceExit --detectOpenHandles  --silent",
+    "test": "cross-env NODE_ENV=testing jest --watch --detectOpenHandles  --silent=false",
     "test-routes": "npm run test -t router",
     "test-models": "npm run test -t model",
     "test-controllers": "npm run test -t controllers",
@@ -27,8 +27,7 @@
     "dev": "nodemon --exec npm run restart",
     "prod": "cross-env NODE_ENV=prod && nodemon --exec npm run restart",
     "restart": "rimraf dist && npm run build",
-    "start": "npm run restart && node dist/index.js",
-    "heroku": "npm run restart && node dist/index.js "
+    "start": "npm run restart && node dist/index.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -42,7 +41,9 @@
     "mongoose": "^5.3.13",
     "morgan": "^1.9.1",
     "rimraf": "^2.6.2",
-    "validator": "^10.9.0",
+    "validator": "^10.9.0"
+  },
+  "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
@@ -70,7 +71,7 @@
     "supertest": "^3.3.0"
   },
   "jest": {
-    "verbose": true,
+    "verbose": false,
     "testURL": "http://localhost/",
     "testEnvironment": "node",
     "setupFilesAfterEnv": [

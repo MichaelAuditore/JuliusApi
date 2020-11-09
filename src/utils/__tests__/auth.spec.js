@@ -142,10 +142,10 @@ describe('Authentication:', () => {
 
     test('creates new token', async () => {
       expect.assertions(2)
+
       const fields = {
-        username: 'michaelAuditore',
         email: 'hello@me.com',
-        password: 'yoyoyo'
+        password: 'yoyoyoyo'
       }
       const savedUser = await User.create(fields)
 
